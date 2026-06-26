@@ -1,130 +1,223 @@
 /* -------------------------------------------------------------
-   TOPSALDO CORE INTERACTION JAVASCRIPT
+   NAGA SHOP CORE CYBERPUNK INTERACTION JAVASCRIPT
    ------------------------------------------------------------- */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // === 1. SERVICES DATA CONFIGURATION ===
+    // === 1. SERVICES DATA CONFIGURATION (18 Items) ===
     const servicesData = {
         // GAMES
         ml: {
             name: "Mobile Legends",
-            desc: "Masukkan User ID & Zone ID. Diamond akan masuk otomatis.",
-            type: "game",
+            desc: "Masukkan User ID & Zone ID. Diamond diproses otomatis.",
+            category: "game",
             nominals: [
-                { id: "ml_86", name: "86 Diamonds", price: 20000 },
-                { id: "ml_172", name: "172 Diamonds", price: 40000 },
-                { id: "ml_257", name: "257 Diamonds", price: 60000 },
-                { id: "ml_344", name: "344 Diamonds", price: 80000 },
-                { id: "ml_706", name: "706 Diamonds", price: 160000 },
-                { id: "ml_1412", name: "1412 Diamonds", price: 320000 }
+                { id: "ml_86", name: "86 Diamonds", price: 19800 },
+                { id: "ml_172", name: "172 Diamonds", price: 39500 },
+                { id: "ml_257", name: "257 Diamonds", price: 59000 },
+                { id: "ml_344", name: "344 Diamonds", price: 78500 },
+                { id: "ml_706", name: "706 Diamonds", price: 156000 },
+                { id: "ml_1412", name: "1412 Diamonds", price: 312000 }
             ]
         },
         ff: {
             name: "Free Fire",
             desc: "Masukkan Player ID Free Fire Anda.",
-            type: "game",
+            category: "game",
             nominals: [
-                { id: "ff_50", name: "50 Diamonds", price: 8000 },
-                { id: "ff_70", name: "70 Diamonds", price: 10000 },
-                { id: "ff_140", name: "140 Diamonds", price: 20000 },
-                { id: "ff_355", name: "355 Diamonds", price: 50000 },
-                { id: "ff_720", name: "720 Diamonds", price: 100000 },
-                { id: "ff_1440", name: "1440 Diamonds", price: 200000 }
+                { id: "ff_50", name: "50 Diamonds", price: 7900 },
+                { id: "ff_70", name: "70 Diamonds", price: 9800 },
+                { id: "ff_140", name: "140 Diamonds", price: 19500 },
+                { id: "ff_355", name: "355 Diamonds", price: 48500 },
+                { id: "ff_720", name: "720 Diamonds", price: 96000 },
+                { id: "ff_1440", name: "1440 Diamonds", price: 192000 }
             ]
         },
         pubg: {
             name: "PUBG Mobile",
             desc: "Masukkan Character ID PUBG Mobile Anda.",
-            type: "game",
+            category: "game",
             nominals: [
-                { id: "pubg_60", name: "60 UC", price: 15000 },
-                { id: "pubg_325", name: "325 UC", price: 75000 },
-                { id: "pubg_660", name: "660 UC", price: 145000 },
-                { id: "pubg_1800", name: "1800 UC", price: 370000 },
-                { id: "pubg_3850", name: "3850 UC", price: 730000 }
+                { id: "pubg_60", name: "60 UC", price: 14500 },
+                { id: "pubg_325", name: "325 UC", price: 72000 },
+                { id: "pubg_660", name: "660 UC", price: 139000 },
+                { id: "pubg_1800", name: "1800 UC", price: 355000 },
+                { id: "pubg_3850", name: "3850 UC", price: 698000 }
+            ]
+        },
+        hok: {
+            name: "Honor of Kings",
+            desc: "Masukkan User ID Honor of Kings Anda.",
+            category: "game",
+            nominals: [
+                { id: "hok_80", name: "80 Tokens", price: 15500 },
+                { id: "hok_240", name: "240 Tokens", price: 46000 },
+                { id: "hok_400", name: "400 Tokens", price: 77000 },
+                { id: "hok_800", name: "800 Tokens", price: 152000 },
+                { id: "hok_1200", name: "1200 Tokens", price: 228000 },
+                { id: "hok_2400", name: "2400 Tokens", price: 450000 }
             ]
         },
         genshin: {
             name: "Genshin Impact",
             desc: "Masukkan UID & Server ID Genshin Impact Anda.",
-            type: "game",
+            category: "game",
             nominals: [
-                { id: "gi_60", name: "60 Genesis Crystals", price: 16000 },
-                { id: "gi_300", name: "330 Genesis Crystals", price: 79000 },
-                { id: "gi_980", name: "1090 Genesis Crystals", price: 249000 },
-                { id: "gi_1980", name: "2240 Genesis Crystals", price: 479000 },
-                { id: "gi_welkin", name: "Welkin Moon (30 Hari)", price: 79000 }
+                { id: "gi_60", name: "60 Genesis Crystals", price: 15800 },
+                { id: "gi_300", name: "330 Genesis Crystals", price: 77500 },
+                { id: "gi_980", name: "1090 Genesis Crystals", price: 242000 },
+                { id: "gi_1980", name: "2240 Genesis Crystals", price: 465000 },
+                { id: "gi_welkin", name: "Welkin Moon (30 Hari)", price: 77500 }
             ]
         },
         valorant: {
             name: "Valorant Points",
-            desc: "Masukkan Riot ID + Tagline (Contoh: User#ID).",
-            type: "game",
+            desc: "Masukkan Riot ID + Tagline (Contoh: User#TAG).",
+            category: "game",
             nominals: [
-                { id: "val_375", name: "375 Points", price: 45000 },
-                { id: "val_750", name: "750 Points", price: 90000 },
-                { id: "val_1650", name: "1650 Points", price: 180000 },
-                { id: "val_2850", name: "2850 Points", price: 300000 },
-                { id: "val_5800", name: "5800 Points", price: 600000 }
+                { id: "val_375", name: "375 Points", price: 44000 },
+                { id: "val_750", name: "750 Points", price: 87000 },
+                { id: "val_1650", name: "1650 Points", price: 175000 },
+                { id: "val_2850", name: "2850 Points", price: 292000 },
+                { id: "val_5800", name: "5800 Points", price: 585000 }
+            ]
+        },
+        codm: {
+            name: "Call of Duty Mobile",
+            desc: "Masukkan Open ID Call of Duty Mobile Anda.",
+            category: "game",
+            nominals: [
+                { id: "codm_31", name: "31 CP", price: 5000 },
+                { id: "codm_63", name: "63 CP", price: 10000 },
+                { id: "codm_128", name: "128 CP", price: 20000 },
+                { id: "codm_320", name: "320 CP", price: 50000 },
+                { id: "codm_643", name: "643 CP", price: 100000 },
+                { id: "codm_1286", name: "1286 CP", price: 200000 }
+            ]
+        },
+        roblox: {
+            name: "Roblox Robux",
+            desc: "Masukkan Username Roblox Anda.",
+            category: "game",
+            nominals: [
+                { id: "rb_80", name: "80 Robux", price: 15500 },
+                { id: "rb_160", name: "160 Robux", price: 31000 },
+                { id: "rb_400", name: "400 Robux", price: 75500 },
+                { id: "rb_800", name: "800 Robux", price: 149000 },
+                { id: "rb_1700", name: "1700 Robux", price: 308000 }
             ]
         },
         // E-WALLETS
         dana: {
-            name: "Saldo DANA",
+            name: "DANA",
             desc: "Masukkan nomor handphone akun DANA terdaftar Anda.",
-            type: "banking",
+            category: "banking",
             nominals: [
-                { id: "dana_10", name: "Saldo Rp 10.000", price: 11500 },
-                { id: "dana_20", name: "Saldo Rp 20.000", price: 21500 },
-                { id: "dana_50", name: "Saldo Rp 50.000", price: 51500 },
-                { id: "dana_100", name: "Saldo Rp 100.000", price: 101500 },
-                { id: "dana_200", name: "Saldo Rp 200.000", price: 201500 }
-            ]
-        },
-        gopay: {
-            name: "Saldo GoPay",
-            desc: "Masukkan nomor handphone akun GoPay Anda.",
-            type: "banking",
-            nominals: [
-                { id: "gopay_10", name: "Saldo Rp 10.000", price: 11500 },
-                { id: "gopay_20", name: "Saldo Rp 20.000", price: 21500 },
-                { id: "gopay_50", name: "Saldo Rp 50.000", price: 51200 },
-                { id: "gopay_100", name: "Saldo Rp 100.000", price: 101200 },
-                { id: "gopay_200", name: "Saldo Rp 200.000", price: 201200 }
+                { id: "dana_10", name: "Saldo Rp 10.000", price: 10400 },
+                { id: "dana_20", name: "Saldo Rp 20.000", price: 20400 },
+                { id: "dana_50", name: "Saldo Rp 50.000", price: 50400 },
+                { id: "dana_100", name: "Saldo Rp 100.000", price: 100400 },
+                { id: "dana_200", name: "Saldo Rp 200.000", price: 200400 }
             ]
         },
         ovo: {
-            name: "Saldo OVO",
+            name: "OVO",
             desc: "Masukkan nomor handphone akun OVO terdaftar Anda.",
-            type: "banking",
+            category: "banking",
             nominals: [
-                { id: "ovo_20", name: "Saldo Rp 20.000", price: 21500 },
-                { id: "ovo_50", name: "Saldo Rp 50.000", price: 51500 },
-                { id: "ovo_100", name: "Saldo Rp 100.000", price: 101500 },
-                { id: "ovo_200", name: "Saldo Rp 200.000", price: 201500 }
+                { id: "ovo_20", name: "Saldo Rp 20.000", price: 20500 },
+                { id: "ovo_50", name: "Saldo Rp 50.000", price: 50500 },
+                { id: "ovo_100", name: "Saldo Rp 100.000", price: 100500 },
+                { id: "ovo_200", name: "Saldo Rp 200.000", price: 200500 }
+            ]
+        },
+        gopay: {
+            name: "GoPay",
+            desc: "Masukkan nomor handphone akun GoPay Anda.",
+            category: "banking",
+            nominals: [
+                { id: "gopay_10", name: "Saldo Rp 10.000", price: 10300 },
+                { id: "gopay_20", name: "Saldo Rp 20.000", price: 20300 },
+                { id: "gopay_50", name: "Saldo Rp 50.000", price: 50100 },
+                { id: "gopay_100", name: "Saldo Rp 100.000", price: 100100 },
+                { id: "gopay_200", name: "Saldo Rp 200.000", price: 200100 }
             ]
         },
         shopeepay: {
-            name: "Saldo ShopeePay",
+            name: "ShopeePay",
             desc: "Masukkan nomor handphone akun ShopeePay Anda.",
-            type: "banking",
+            category: "banking",
             nominals: [
-                { id: "sp_10", name: "Saldo Rp 10.000", price: 11500 },
-                { id: "sp_20", name: "Saldo Rp 20.000", price: 21500 },
-                { id: "sp_50", name: "Saldo Rp 50.000", price: 51500 },
-                { id: "sp_100", name: "Saldo Rp 100.000", price: 101500 }
+                { id: "sp_10", name: "Saldo Rp 10.000", price: 10500 },
+                { id: "sp_20", name: "Saldo Rp 20.000", price: 20500 },
+                { id: "sp_50", name: "Saldo Rp 50.000", price: 50500 },
+                { id: "sp_100", name: "Saldo Rp 100.000", price: 100500 }
             ]
         },
         linkaja: {
-            name: "Saldo LinkAja",
+            name: "LinkAja",
             desc: "Masukkan nomor handphone akun LinkAja Anda.",
-            type: "banking",
+            category: "banking",
             nominals: [
-                { id: "la_10", name: "Saldo Rp 10.000", price: 11200 },
-                { id: "la_20", name: "Saldo Rp 20.000", price: 21200 },
-                { id: "la_50", name: "Saldo Rp 50.000", price: 51200 },
-                { id: "la_100", name: "Saldo Rp 100.000", price: 101200 }
+                { id: "la_10", name: "Saldo Rp 10.000", price: 10200 },
+                { id: "la_20", name: "Saldo Rp 20.000", price: 20200 },
+                { id: "la_50", name: "Saldo Rp 50.000", price: 50200 },
+                { id: "la_100", name: "Saldo Rp 100.000", price: 100200 }
+            ]
+        },
+        seabank: {
+            name: "SeaBank",
+            desc: "Masukkan nomor rekening SeaBank tujuan transfer.",
+            category: "banking",
+            nominals: [
+                { id: "sb_25", name: "Transfer Rp 25.000", price: 25000 },
+                { id: "sb_50", name: "Transfer Rp 50.000", price: 50000 },
+                { id: "sb_100", name: "Transfer Rp 100.000", price: 100000 },
+                { id: "sb_250", name: "Transfer Rp 250.000", price: 250000 }
+            ]
+        },
+        bca: {
+            name: "BCA Mobile",
+            desc: "Masukkan nomor rekening BCA tujuan transfer.",
+            category: "banking",
+            nominals: [
+                { id: "bca_25", name: "Transfer Rp 25.000", price: 25000 },
+                { id: "bca_50", name: "Transfer Rp 50.000", price: 50000 },
+                { id: "bca_100", name: "Transfer Rp 100.000", price: 100000 },
+                { id: "bca_250", name: "Transfer Rp 250.000", price: 250000 }
+            ]
+        },
+        brimo: {
+            name: "BRImo",
+            desc: "Masukkan nomor rekening BRI tujuan transfer.",
+            category: "banking",
+            nominals: [
+                { id: "bri_25", name: "Transfer Rp 25.000", price: 25000 },
+                { id: "bri_50", name: "Transfer Rp 50.000", price: 50000 },
+                { id: "bri_100", name: "Transfer Rp 100.000", price: 100000 },
+                { id: "bri_250", name: "Transfer Rp 250.000", price: 250000 }
+            ]
+        },
+        mandiri: {
+            name: "Livin' by Mandiri",
+            desc: "Masukkan nomor rekening Mandiri tujuan transfer.",
+            category: "banking",
+            nominals: [
+                { id: "man_25", name: "Transfer Rp 25.000", price: 25000 },
+                { id: "man_50", name: "Transfer Rp 50.000", price: 50000 },
+                { id: "man_100", name: "Transfer Rp 100.000", price: 100000 },
+                { id: "man_250", name: "Transfer Rp 250.000", price: 250000 }
+            ]
+        },
+        bni: {
+            name: "BNI Mobile Banking",
+            desc: "Masukkan nomor rekening BNI tujuan transfer.",
+            category: "banking",
+            nominals: [
+                { id: "bni_25", name: "Transfer Rp 25.000", price: 25000 },
+                { id: "bni_50", name: "Transfer Rp 50.000", price: 50000 },
+                { id: "bni_100", name: "Transfer Rp 100.000", price: 100000 },
+                { id: "bni_250", name: "Transfer Rp 250.000", price: 250000 }
             ]
         }
     };
@@ -133,15 +226,18 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeServiceId = "ml";
     let activeNominalId = "";
     let activeNominalObj = null;
+    let selectedCategoryFilter = "all";
+    let countdownInterval = null;
 
     // === 2. DOM ELEMENTS ===
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navMenu = document.getElementById('navMenu');
     const navLinks = document.querySelectorAll('.nav-link');
-    const tabBtns = document.querySelectorAll('.tab-btn');
-    const gameGrid = document.getElementById('gameGrid');
-    const bankingGrid = document.getElementById('bankingGrid');
+    const serviceSearch = document.getElementById('serviceSearch');
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const servicesGrid = document.getElementById('servicesGrid');
     const serviceCards = document.querySelectorAll('.service-card');
+    const emptyResult = document.getElementById('emptyResult');
     
     // Form elements
     const selectedServiceName = document.getElementById('selectedServiceName');
@@ -154,7 +250,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const zoneIdInput = document.getElementById('zoneIdInput');
     const phoneInput = document.getElementById('phoneInput');
     const nominalGrid = document.getElementById('nominalGrid');
-    const paymentRadios = document.getElementsByName('paymentMethod');
     
     // Summary elements
     const summaryService = document.getElementById('summaryService');
@@ -164,14 +259,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Modal elements
     const orderModal = document.getElementById('orderModal');
-    const closeModalBtn = document.getElementById('closeModalBtn');
-    const waConfirmBtn = document.getElementById('waConfirmBtn');
-    const receiptId = document.getElementById('receiptId');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const cancelPaymentBtn = document.getElementById('cancelPaymentBtn');
+    const confirmPaymentBtn = document.getElementById('confirmPaymentBtn');
+    const successCloseBtn = document.getElementById('successCloseBtn');
+    const modalHeaderSection = document.getElementById('modalHeaderSection');
+    const modalMainContent = document.getElementById('modalMainContent');
+    const verificationScreen = document.getElementById('verificationScreen');
+    const successScreen = document.getElementById('successScreen');
     const receiptService = document.getElementById('receiptService');
     const receiptTarget = document.getElementById('receiptTarget');
     const receiptNominal = document.getElementById('receiptNominal');
-    const receiptPayment = document.getElementById('receiptPayment');
     const receiptTotal = document.getElementById('receiptTotal');
+    const countdownTimer = document.getElementById('countdownTimer');
+    const paymentStatusText = document.getElementById('paymentStatusText');
+    const statusDot = document.getElementById('statusDot');
+    const qrisContainer = document.getElementById('qrisContainer');
 
     // === 3. MOBILE NAVIGATION ===
     hamburgerBtn.addEventListener('click', () => {
@@ -179,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
         navMenu.classList.toggle('active');
     });
 
-    // Close menu when navigation links are clicked (mobile)
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburgerBtn.classList.remove('active');
@@ -187,18 +289,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Navbar background change on scroll
+    // Navbar background change & active indicator on scroll
     window.addEventListener('scroll', () => {
         const header = document.querySelector('.navbar-container');
         if (window.scrollY > 50) {
             header.style.padding = '5px 0';
-            header.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.1)';
+            header.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.5)';
         } else {
             header.style.padding = '0';
-            header.style.boxShadow = 'var(--glass-shadow)';
+            header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.4)';
         }
 
-        // Active link on scroll indicator
         let current = '';
         const sections = document.querySelectorAll('section, header');
         sections.forEach(section => {
@@ -217,42 +318,79 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // === 4. CATEGORY TABS TOGGLE ===
-    tabBtns.forEach(btn => {
+    // === 4. REAL-TIME SEARCH & CATEGORY FILTERING ===
+    function filterServices() {
+        const searchQuery = serviceSearch.value.toLowerCase().trim();
+        let visibleCount = 0;
+
+        serviceCards.forEach(card => {
+            const serviceId = card.getAttribute('data-id');
+            const serviceName = card.getAttribute('data-name').toLowerCase();
+            const serviceCat = card.getAttribute('data-category');
+
+            const matchesSearch = serviceName.includes(searchQuery);
+            const matchesCategory = selectedCategoryFilter === 'all' || serviceCat === selectedCategoryFilter;
+
+            if (matchesSearch && matchesCategory) {
+                card.classList.remove('hide');
+                visibleCount++;
+            } else {
+                card.classList.add('hide');
+            }
+        });
+
+        // Toggle Empty Result Placeholder
+        if (visibleCount === 0) {
+            emptyResult.classList.remove('hide');
+            servicesGrid.style.display = 'none';
+        } else {
+            emptyResult.classList.add('hide');
+            servicesGrid.style.display = 'grid';
+        }
+    }
+
+    // Search input typing listener
+    serviceSearch.addEventListener('input', filterServices);
+
+    // Tab buttons click listeners
+    filterTabs.forEach(btn => {
         btn.addEventListener('click', () => {
-            tabBtns.forEach(b => b.classList.remove('active'));
+            filterTabs.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            const category = btn.getAttribute('data-category');
-            if (category === 'game') {
-                gameGrid.classList.add('active');
-                bankingGrid.classList.remove('active');
-                // Select first game
-                selectService("ml");
-            } else {
-                bankingGrid.classList.add('active');
-                gameGrid.classList.remove('active');
-                // Select first banking
-                selectService("dana");
+            selectedCategoryFilter = btn.getAttribute('data-filter');
+            filterServices();
+
+            // Auto-select first visible item
+            const firstVisibleCard = Array.from(serviceCards).find(card => !card.classList.contains('hide'));
+            if (firstVisibleCard) {
+                const serviceId = firstVisibleCard.getAttribute('data-id');
+                selectService(serviceId);
             }
         });
     });
 
-    // === 5. LAYANAN & NOMINAL SELECTOR ===
+    // === 5. SERVICE & NOMINAL SELECTION ===
     serviceCards.forEach(card => {
         card.addEventListener('click', () => {
-            serviceCards.forEach(c => c.classList.remove('active'));
-            card.classList.add('active');
-            
             const serviceId = card.getAttribute('data-id');
             selectService(serviceId);
+            
+            // Smooth scroll to the order form panel
+            const orderPanel = document.querySelector('.order-widget-panel');
+            if (orderPanel) {
+                window.scrollTo({
+                    top: orderPanel.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 
     function selectService(serviceId) {
-        // Visual indicator update
+        // Update selection styling
         serviceCards.forEach(c => {
-            if(c.getAttribute('data-id') === serviceId) {
+            if (c.getAttribute('data-id') === serviceId) {
                 c.classList.add('active');
             } else {
                 c.classList.remove('active');
@@ -262,26 +400,25 @@ document.addEventListener('DOMContentLoaded', () => {
         activeServiceId = serviceId;
         const service = servicesData[serviceId];
         
-        // Update Title & Details
+        // Update titles and details
         selectedServiceName.textContent = service.name;
         selectedServiceDesc.textContent = service.desc;
         summaryService.textContent = service.name;
 
-        // Reset tracking fields
+        // Reset inputs
         activeNominalId = "";
         activeNominalObj = null;
         summaryNominal.textContent = "-";
         summaryTotal.textContent = "Rp 0";
 
-        // Toggle Form Inputs based on service type
-        if (service.type === 'game') {
+        // Dynamic input fields
+        if (service.category === 'game') {
             gameInputFields.classList.remove('hide');
             bankingInputFields.classList.add('hide');
             
             userIdInput.setAttribute('required', 'true');
             phoneInput.removeAttribute('required');
 
-            // Custom placeholder details
             if (serviceId === 'ml') {
                 inputLabelTitle.textContent = "Masukkan User ID & Zone ID";
                 zoneIdWrapper.classList.remove('hide');
@@ -294,6 +431,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 zoneIdInput.setAttribute('required', 'true');
                 userIdInput.placeholder = "Contoh: 817654321";
                 zoneIdInput.placeholder = "Asia / America / Europe";
+            } else if (serviceId === 'valorant') {
+                inputLabelTitle.textContent = "Masukkan Riot ID & Tagline";
+                zoneIdWrapper.classList.remove('hide');
+                zoneIdInput.setAttribute('required', 'true');
+                userIdInput.placeholder = "Contoh: NagaShop";
+                zoneIdInput.placeholder = "Contoh: #ID";
             } else {
                 inputLabelTitle.textContent = "Masukkan Player ID";
                 zoneIdWrapper.classList.add('hide');
@@ -301,7 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 userIdInput.placeholder = "Contoh: 8876534211";
             }
         } else {
-            // Banking / E-Wallet Input
+            // E-Wallets / Banks
             gameInputFields.classList.add('hide');
             bankingInputFields.classList.remove('hide');
             
@@ -309,11 +452,15 @@ document.addEventListener('DOMContentLoaded', () => {
             zoneIdInput.removeAttribute('required');
             phoneInput.setAttribute('required', 'true');
             
-            inputLabelTitle.textContent = "Masukkan Nomor Handphone Tujuan";
-            phoneInput.placeholder = `Contoh: 08123456789 (Akun ${service.name})`;
+            if (serviceId === 'seabank' || serviceId === 'bca' || serviceId === 'brimo' || serviceId === 'mandiri' || serviceId === 'bni') {
+                inputLabelTitle.textContent = "Masukkan Nomor Rekening";
+                phoneInput.placeholder = `Ketik nomor rekening ${service.name} Anda`;
+            } else {
+                inputLabelTitle.textContent = "Masukkan Nomor Handphone Diterima";
+                phoneInput.placeholder = `Contoh: 0812XXXXXXXX (Nomor ${service.name})`;
+            }
         }
 
-        // Render Nominals
         renderNominals(service.nominals);
     }
 
@@ -339,7 +486,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </span>
             `;
 
-            // Radio change handler
             card.querySelector('input').addEventListener('change', () => {
                 activeNominalId = nominal.id;
                 activeNominalObj = nominal;
@@ -350,51 +496,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Payment methods change trigger price update
-    paymentRadios.forEach(radio => {
-        radio.addEventListener('change', updateSummary);
-    });
-
-    function getAdminFee(method, price) {
-        if (method === 'QRIS') {
-            return Math.round(price * 0.007); // 0.7% admin
-        } else if (method === 'Transfer Bank BCA') {
-            return 1000;
-        } else {
-            return 2500; // Alfamart / Retailer outlet fee
-        }
-    }
-
     function updateSummary() {
         if (!activeNominalObj) return;
 
-        // Find active payment
-        let paymentMethodValue = 'QRIS';
-        paymentRadios.forEach(r => {
-            if (r.checked) paymentMethodValue = r.value;
-        });
-
-        const price = activeNominalObj.price;
-        const fee = getAdminFee(paymentMethodValue, price);
-        const total = price + fee;
+        const total = activeNominalObj.price; // Admin fee 0%
 
         summaryNominal.textContent = activeNominalObj.name;
         summaryTotal.textContent = `Rp ${total.toLocaleString('id-ID')}`;
     }
 
-    // Initialize with Mobile Legends selected
+    // Default Select Mobile Legends
     selectService("ml");
 
-    // === 6. FORM SUBMISSION & SUCCESS MODAL ===
+    // === 6. QRIS CASHIER MODAL & COUNTDOWN TIMER ===
     topupForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const service = servicesData[activeServiceId];
         let targetAccount = '';
 
-        if (service.type === 'game') {
-            if (activeServiceId === 'ml' || activeServiceId === 'genshin') {
-                targetAccount = `${userIdInput.value} (${zoneIdInput.value})`;
+        if (service.category === 'game') {
+            if (activeServiceId === 'ml' || activeServiceId === 'genshin' || activeServiceId === 'valorant') {
+                targetAccount = `${userIdInput.value} ${zoneIdInput.value}`;
             } else {
                 targetAccount = userIdInput.value;
             }
@@ -402,44 +525,89 @@ document.addEventListener('DOMContentLoaded', () => {
             targetAccount = phoneInput.value;
         }
 
-        // Find active payment
-        let paymentMethodValue = 'QRIS';
-        paymentRadios.forEach(r => {
-            if (r.checked) paymentMethodValue = r.value;
-        });
+        const totalPayable = activeNominalObj.price;
 
-        const totalPayable = activeNominalObj.price + getAdminFee(paymentMethodValue, activeNominalObj.price);
-        const randId = 'TS-' + Math.floor(1000000 + Math.random() * 9000000);
+        // Reset screen states
+        modalHeaderSection.classList.remove('hide');
+        modalMainContent.classList.remove('hide');
+        verificationScreen.classList.add('hide');
+        successScreen.classList.add('hide');
+
+        // Reset modal main state
+        paymentStatusText.textContent = "Menunggu Pembayaran";
+        paymentStatusText.style.color = "#f59e0b";
+        statusDot.style.backgroundColor = "#f59e0b";
+        qrisContainer.classList.remove('hide');
+        confirmPaymentBtn.classList.remove('hide');
 
         // Populate Modal Fields
-        receiptId.textContent = randId;
         receiptService.textContent = service.name;
         receiptTarget.textContent = targetAccount;
         receiptNominal.textContent = activeNominalObj.name;
-        receiptPayment.textContent = paymentMethodValue;
         receiptTotal.textContent = `Rp ${totalPayable.toLocaleString('id-ID')}`;
 
-        // Create WhatsApp Message redirect
-        const waText = `Halo TopSaldo! Saya ingin mengonfirmasi pembayaran untuk pemesanan top up dengan rincian berikut:%0A%0A` +
-            `*ID Transaksi:* ${randId}%0A` +
-            `*Layanan:* ${service.name}%0A` +
-            `*Data Akun:* ${targetAccount}%0A` +
-            `*Nominal:* ${activeNominalObj.name}%0A` +
-            `*Metode Pembayaran:* ${paymentMethodValue}%0A` +
-            `*Total Tagihan:* Rp ${totalPayable.toLocaleString('id-ID')}%0A%0A` +
-            `Tolong bantu diproses ya, terima kasih!`;
+        // Start Countdown Timer (15 Minutes)
+        startCountdown(15 * 60);
 
-        waConfirmBtn.href = `https://wa.me/628218379547?text=${waText}`;
-
-        // Open Modal Box
+        // Show Modal
         orderModal.classList.remove('hide');
+        document.body.classList.add('modal-open');
         setTimeout(() => {
             orderModal.classList.add('show');
         }, 10);
     });
 
+    function startCountdown(seconds) {
+        clearInterval(countdownInterval);
+        
+        let timeLeft = seconds;
+        
+        function tick() {
+            let mins = Math.floor(timeLeft / 60);
+            let secs = timeLeft % 60;
+            
+            mins = mins < 10 ? '0' + mins : mins;
+            secs = secs < 10 ? '0' + secs : secs;
+            
+            countdownTimer.textContent = `${mins}:${secs}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(countdownInterval);
+                paymentStatusText.textContent = "Pembayaran Kedaluwarsa";
+                paymentStatusText.style.color = "#ef4444";
+                statusDot.style.backgroundColor = "#ef4444";
+                confirmPaymentBtn.classList.add('hide');
+            }
+            timeLeft--;
+        }
+        
+        tick();
+        countdownInterval = setInterval(tick, 1000);
+    }
+
+    // Confirm Payment Simulation Button Clicked
+    confirmPaymentBtn.addEventListener('click', () => {
+        clearInterval(countdownInterval);
+        
+        // Hide main header and cashier content
+        modalHeaderSection.classList.add('hide');
+        modalMainContent.classList.add('hide');
+        
+        // Show loading verification screen
+        verificationScreen.classList.remove('hide');
+        
+        // Simulate verification processing time (3.5 seconds)
+        setTimeout(() => {
+            verificationScreen.classList.add('hide');
+            successScreen.classList.remove('hide');
+        }, 3500);
+    });
+
     // Close Modal Box
-    closeModalBtn.addEventListener('click', closeModal);
+    modalCloseBtn.addEventListener('click', closeModal);
+    cancelPaymentBtn.addEventListener('click', closeModal);
+    successCloseBtn.addEventListener('click', closeModal);
+
     orderModal.addEventListener('click', (e) => {
         if (e.target === orderModal) {
             closeModal();
@@ -447,7 +615,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function closeModal() {
+        clearInterval(countdownInterval);
         orderModal.classList.remove('show');
+        document.body.classList.remove('modal-open');
         setTimeout(() => {
             orderModal.classList.add('hide');
         }, 300);
@@ -481,17 +651,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function startSlideShow() {
         clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000); // Auto slide 5s
+        slideInterval = setInterval(nextSlide, 4500); // Autoplay slide 4.5s
     }
 
     sliderNextBtn.addEventListener('click', () => {
         nextSlide();
-        startSlideShow(); // Reset interval
+        startSlideShow();
     });
 
     sliderPrevBtn.addEventListener('click', () => {
         prevSlide();
-        startSlideShow(); // Reset interval
+        startSlideShow();
     });
 
     dots.forEach((dot, index) => {
@@ -501,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initialize slides
+    // Run autoplay testimonial slides
     startSlideShow();
 
     // === 8. FAQ ACCORDION ===
@@ -513,7 +683,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const faqBody = faqItem.querySelector('.faq-body');
             const isActive = faqItem.classList.contains('active');
             
-            // Close all other FAQs
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
                 item.querySelector('.faq-body').style.maxHeight = null;
@@ -521,24 +690,42 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (!isActive) {
                 faqItem.classList.add('active');
-                // Calculate height dynamically
                 faqBody.style.maxHeight = faqBody.scrollHeight + "px";
             }
         });
     });
 
-    // === 9. CONTACT FORM RESPONSE ===
+    // === 9. CONTACT FORM SUBMISSION ===
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         
         const name = document.getElementById('contactName').value;
-        alert(`Terima kasih ${name}, pesan Anda telah terkirim! Tim CS TopSaldo dari Naga Hitam akan segera menghubungi Anda kembali.`);
+        alert(`Terima kasih ${name}, pesan Anda telah terkirim! Tim Support NAGA SHOP dari kelompok Naga Hitam akan segera menghubungi Anda kembali.`);
         
         contactForm.reset();
     });
 
-    // === 10. SMOOTH ANCHOR SCROLLING ===
+    // === 10. SMOOTH SCROLL REVEAL (IntersectionObserver) ===
+    const revealSections = document.querySelectorAll('.reveal');
+    
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    });
+
+    revealSections.forEach(section => {
+        revealObserver.observe(section);
+    });
+
+    // Smooth navigation anchor links scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
