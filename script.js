@@ -429,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `*Total Tagihan:* Rp ${totalPayable.toLocaleString('id-ID')}%0A%0A` +
             `Tolong bantu diproses ya, terima kasih!`;
 
-        waConfirmBtn.href = `https://wa.me/6281234567890?text=${waText}`;
+        waConfirmBtn.href = `https://wa.me/628218379547?text=${waText}`;
 
         // Open Modal Box
         orderModal.classList.remove('hide');
@@ -533,7 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         const name = document.getElementById('contactName').value;
-        alert(`Terima kasih ${name}, pesan Anda telah terkirim! Tim CS TopSaldo dari Kelompok X akan segera menghubungi Anda kembali.`);
+        alert(`Terima kasih ${name}, pesan Anda telah terkirim! Tim CS TopSaldo dari Naga Hitam akan segera menghubungi Anda kembali.`);
         
         contactForm.reset();
     });
