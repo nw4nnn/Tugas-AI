@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         valorant: {
-            name: "Valorant Points",
+            name: "Valorant",
             desc: "Masukkan Riot ID + Tagline (Contoh: User#TAG).",
             category: "game",
             nominals: [
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         codm: {
-            name: "Call of Duty Mobile",
+            name: "Call Of Duty Mobile",
             desc: "Masukkan Open ID Call of Duty Mobile Anda.",
             category: "game",
             nominals: [
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         roblox: {
-            name: "Roblox Robux",
+            name: "Roblox",
             desc: "Masukkan Username Roblox Anda.",
             category: "game",
             nominals: [
@@ -113,11 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor handphone akun DANA terdaftar Anda.",
             category: "banking",
             nominals: [
-                { id: "dana_10", name: "Saldo Rp 10.000", price: 10400 },
-                { id: "dana_20", name: "Saldo Rp 20.000", price: 20400 },
-                { id: "dana_50", name: "Saldo Rp 50.000", price: 50400 },
-                { id: "dana_100", name: "Saldo Rp 100.000", price: 100400 },
-                { id: "dana_200", name: "Saldo Rp 200.000", price: 200400 }
+                { id: "dana_10", name: "Rp 10.000", price: 10000 },
+                { id: "dana_20", name: "Rp 20.000", price: 20000 },
+                { id: "dana_50", name: "Rp 50.000", price: 50000 },
+                { id: "dana_100", name: "Rp 100.000", price: 100000 },
+                { id: "dana_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         ovo: {
@@ -125,10 +125,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor handphone akun OVO terdaftar Anda.",
             category: "banking",
             nominals: [
-                { id: "ovo_20", name: "Saldo Rp 20.000", price: 20500 },
-                { id: "ovo_50", name: "Saldo Rp 50.000", price: 50500 },
-                { id: "ovo_100", name: "Saldo Rp 100.000", price: 100500 },
-                { id: "ovo_200", name: "Saldo Rp 200.000", price: 200500 }
+                { id: "ovo_10", name: "Rp 10.000", price: 10000 },
+                { id: "ovo_20", name: "Rp 20.000", price: 20000 },
+                { id: "ovo_50", name: "Rp 50.000", price: 50000 },
+                { id: "ovo_100", name: "Rp 100.000", price: 100000 },
+                { id: "ovo_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         gopay: {
@@ -136,11 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor handphone akun GoPay Anda.",
             category: "banking",
             nominals: [
-                { id: "gopay_10", name: "Saldo Rp 10.000", price: 10300 },
-                { id: "gopay_20", name: "Saldo Rp 20.000", price: 20300 },
-                { id: "gopay_50", name: "Saldo Rp 50.000", price: 50100 },
-                { id: "gopay_100", name: "Saldo Rp 100.000", price: 100100 },
-                { id: "gopay_200", name: "Saldo Rp 200.000", price: 200100 }
+                { id: "gopay_10", name: "Rp 10.000", price: 10000 },
+                { id: "gopay_20", name: "Rp 20.000", price: 20000 },
+                { id: "gopay_50", name: "Rp 50.000", price: 50000 },
+                { id: "gopay_100", name: "Rp 100.000", price: 100000 },
+                { id: "gopay_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         shopeepay: {
@@ -148,10 +149,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor handphone akun ShopeePay Anda.",
             category: "banking",
             nominals: [
-                { id: "sp_10", name: "Saldo Rp 10.000", price: 10500 },
-                { id: "sp_20", name: "Saldo Rp 20.000", price: 20500 },
-                { id: "sp_50", name: "Saldo Rp 50.000", price: 50500 },
-                { id: "sp_100", name: "Saldo Rp 100.000", price: 100500 }
+                { id: "sp_10", name: "Rp 10.000", price: 10000 },
+                { id: "sp_20", name: "Rp 20.000", price: 20000 },
+                { id: "sp_50", name: "Rp 50.000", price: 50000 },
+                { id: "sp_100", name: "Rp 100.000", price: 100000 },
+                { id: "sp_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         linkaja: {
@@ -159,10 +161,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor handphone akun LinkAja Anda.",
             category: "banking",
             nominals: [
-                { id: "la_10", name: "Saldo Rp 10.000", price: 10200 },
-                { id: "la_20", name: "Saldo Rp 20.000", price: 20200 },
-                { id: "la_50", name: "Saldo Rp 50.000", price: 50200 },
-                { id: "la_100", name: "Saldo Rp 100.000", price: 100200 }
+                { id: "la_10", name: "Rp 10.000", price: 10000 },
+                { id: "la_20", name: "Rp 20.000", price: 20000 },
+                { id: "la_50", name: "Rp 50.000", price: 50000 },
+                { id: "la_100", name: "Rp 100.000", price: 100000 },
+                { id: "la_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         seabank: {
@@ -170,10 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor rekening SeaBank tujuan transfer.",
             category: "banking",
             nominals: [
-                { id: "sb_25", name: "Transfer Rp 25.000", price: 25000 },
-                { id: "sb_50", name: "Transfer Rp 50.000", price: 50000 },
-                { id: "sb_100", name: "Transfer Rp 100.000", price: 100000 },
-                { id: "sb_250", name: "Transfer Rp 250.000", price: 250000 }
+                { id: "sb_10", name: "Rp 10.000", price: 10000 },
+                { id: "sb_20", name: "Rp 20.000", price: 20000 },
+                { id: "sb_50", name: "Rp 50.000", price: 50000 },
+                { id: "sb_100", name: "Rp 100.000", price: 100000 },
+                { id: "sb_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         bca: {
@@ -181,10 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor rekening BCA tujuan transfer.",
             category: "banking",
             nominals: [
-                { id: "bca_25", name: "Transfer Rp 25.000", price: 25000 },
-                { id: "bca_50", name: "Transfer Rp 50.000", price: 50000 },
-                { id: "bca_100", name: "Transfer Rp 100.000", price: 100000 },
-                { id: "bca_250", name: "Transfer Rp 250.000", price: 250000 }
+                { id: "bca_10", name: "Rp 10.000", price: 10000 },
+                { id: "bca_20", name: "Rp 20.000", price: 20000 },
+                { id: "bca_50", name: "Rp 50.000", price: 50000 },
+                { id: "bca_100", name: "Rp 100.000", price: 100000 },
+                { id: "bca_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         brimo: {
@@ -192,10 +197,11 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor rekening BRI tujuan transfer.",
             category: "banking",
             nominals: [
-                { id: "bri_25", name: "Transfer Rp 25.000", price: 25000 },
-                { id: "bri_50", name: "Transfer Rp 50.000", price: 50000 },
-                { id: "bri_100", name: "Transfer Rp 100.000", price: 100000 },
-                { id: "bri_250", name: "Transfer Rp 250.000", price: 250000 }
+                { id: "bri_10", name: "Rp 10.000", price: 10000 },
+                { id: "bri_20", name: "Rp 20.000", price: 20000 },
+                { id: "bri_50", name: "Rp 50.000", price: 50000 },
+                { id: "bri_100", name: "Rp 100.000", price: 100000 },
+                { id: "bri_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         mandiri: {
@@ -203,21 +209,23 @@ document.addEventListener('DOMContentLoaded', () => {
             desc: "Masukkan nomor rekening Mandiri tujuan transfer.",
             category: "banking",
             nominals: [
-                { id: "man_25", name: "Transfer Rp 25.000", price: 25000 },
-                { id: "man_50", name: "Transfer Rp 50.000", price: 50000 },
-                { id: "man_100", name: "Transfer Rp 100.000", price: 100000 },
-                { id: "man_250", name: "Transfer Rp 250.000", price: 250000 }
+                { id: "man_10", name: "Rp 10.000", price: 10000 },
+                { id: "man_20", name: "Rp 20.000", price: 20000 },
+                { id: "man_50", name: "Rp 50.000", price: 50000 },
+                { id: "man_100", name: "Rp 100.000", price: 100000 },
+                { id: "man_200", name: "Rp 200.000", price: 200000 }
             ]
         },
         bni: {
-            name: "BNI Mobile Banking",
+            name: "BNI Mobile",
             desc: "Masukkan nomor rekening BNI tujuan transfer.",
             category: "banking",
             nominals: [
-                { id: "bni_25", name: "Transfer Rp 25.000", price: 25000 },
-                { id: "bni_50", name: "Transfer Rp 50.000", price: 50000 },
-                { id: "bni_100", name: "Transfer Rp 100.000", price: 100000 },
-                { id: "bni_250", name: "Transfer Rp 250.000", price: 250000 }
+                { id: "bni_10", name: "Rp 10.000", price: 10000 },
+                { id: "bni_20", name: "Rp 20.000", price: 20000 },
+                { id: "bni_50", name: "Rp 50.000", price: 50000 },
+                { id: "bni_100", name: "Rp 100.000", price: 100000 },
+                { id: "bni_200", name: "Rp 200.000", price: 200000 }
             ]
         }
     };
@@ -322,9 +330,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function filterServices() {
         const searchQuery = serviceSearch.value.toLowerCase().trim();
         let visibleCount = 0;
+        let gameVisibleCount = 0;
+        let bankingVisibleCount = 0;
 
         serviceCards.forEach(card => {
-            const serviceId = card.getAttribute('data-id');
             const serviceName = card.getAttribute('data-name').toLowerCase();
             const serviceCat = card.getAttribute('data-category');
 
@@ -334,18 +343,41 @@ document.addEventListener('DOMContentLoaded', () => {
             if (matchesSearch && matchesCategory) {
                 card.classList.remove('hide');
                 visibleCount++;
+                if (serviceCat === 'game') {
+                    gameVisibleCount++;
+                } else {
+                    bankingVisibleCount++;
+                }
             } else {
                 card.classList.add('hide');
             }
         });
 
+        // Toggle Category Group visibility
+        const gameGroup = document.getElementById('gameCategoryGroup');
+        const bankingGroup = document.getElementById('bankingCategoryGroup');
+
+        if (gameGroup) {
+            if (gameVisibleCount === 0) {
+                gameGroup.classList.add('hide');
+            } else {
+                gameGroup.classList.remove('hide');
+            }
+        }
+
+        if (bankingGroup) {
+            if (bankingVisibleCount === 0) {
+                bankingGroup.classList.add('hide');
+            } else {
+                bankingGroup.classList.remove('hide');
+            }
+        }
+
         // Toggle Empty Result Placeholder
         if (visibleCount === 0) {
             emptyResult.classList.remove('hide');
-            servicesGrid.style.display = 'none';
         } else {
             emptyResult.classList.add('hide');
-            servicesGrid.style.display = 'grid';
         }
     }
 
@@ -410,8 +442,33 @@ document.addEventListener('DOMContentLoaded', () => {
         activeNominalObj = null;
         summaryNominal.textContent = "-";
         summaryTotal.textContent = "Rp 0";
+        if (userIdInput) userIdInput.value = "";
+        if (zoneIdInput) zoneIdInput.value = "";
+        if (phoneInput) phoneInput.value = "";
+
+        // Step 0 Fields
+        const formServiceType = document.getElementById('formServiceType');
+        const formServiceName = document.getElementById('formServiceName');
+        if (formServiceType) {
+            let typeLabel = "GAME";
+            if (service.category === 'banking') {
+                const bankingServices = ['bca', 'brimo', 'bni', 'mandiri', 'seabank'];
+                if (bankingServices.includes(serviceId)) {
+                    typeLabel = "M-BANKING";
+                } else {
+                    typeLabel = "E-WALLET";
+                }
+            }
+            formServiceType.value = typeLabel;
+        }
+        if (formServiceName) {
+            formServiceName.value = service.name;
+        }
 
         // Dynamic input fields
+        const gameUserLabel = document.querySelector('#gameInputFields .input-wrapper:first-child label');
+        const bankingLabel = document.querySelector('#bankingInputFields label');
+        
         if (service.category === 'game') {
             gameInputFields.classList.remove('hide');
             bankingInputFields.classList.add('hide');
@@ -421,27 +478,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (serviceId === 'ml') {
                 inputLabelTitle.textContent = "Masukkan User ID & Zone ID";
+                if (gameUserLabel) gameUserLabel.textContent = "User ID";
                 zoneIdWrapper.classList.remove('hide');
                 zoneIdInput.setAttribute('required', 'true');
                 userIdInput.placeholder = "Contoh: 12345678";
                 zoneIdInput.placeholder = "Contoh: (1234)";
             } else if (serviceId === 'genshin') {
                 inputLabelTitle.textContent = "Masukkan UID & Server ID";
+                if (gameUserLabel) gameUserLabel.textContent = "UID";
                 zoneIdWrapper.classList.remove('hide');
                 zoneIdInput.setAttribute('required', 'true');
                 userIdInput.placeholder = "Contoh: 817654321";
                 zoneIdInput.placeholder = "Asia / America / Europe";
             } else if (serviceId === 'valorant') {
                 inputLabelTitle.textContent = "Masukkan Riot ID & Tagline";
+                if (gameUserLabel) gameUserLabel.textContent = "Riot ID";
                 zoneIdWrapper.classList.remove('hide');
                 zoneIdInput.setAttribute('required', 'true');
                 userIdInput.placeholder = "Contoh: NagaShop";
                 zoneIdInput.placeholder = "Contoh: #ID";
             } else {
-                inputLabelTitle.textContent = "Masukkan Player ID";
+                let labelText = "Player ID";
+                if (serviceId === 'roblox') labelText = "Username";
+                else if (serviceId === 'pubg') labelText = "Character ID";
+                else if (serviceId === 'codm') labelText = "Open ID";
+                
+                inputLabelTitle.textContent = `Masukkan ${labelText}`;
+                if (gameUserLabel) gameUserLabel.textContent = labelText;
                 zoneIdWrapper.classList.add('hide');
                 zoneIdInput.removeAttribute('required');
-                userIdInput.placeholder = "Contoh: 8876534211";
+                userIdInput.placeholder = `Contoh: ${serviceId === 'roblox' ? 'NagaGamer' : '8876534211'}`;
             }
         } else {
             // E-Wallets / Banks
@@ -454,10 +520,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (serviceId === 'seabank' || serviceId === 'bca' || serviceId === 'brimo' || serviceId === 'mandiri' || serviceId === 'bni') {
                 inputLabelTitle.textContent = "Masukkan Nomor Rekening";
+                if (bankingLabel) bankingLabel.textContent = "Nomor Rekening";
                 phoneInput.placeholder = `Ketik nomor rekening ${service.name} Anda`;
             } else {
-                inputLabelTitle.textContent = "Masukkan Nomor Handphone Diterima";
-                phoneInput.placeholder = `Contoh: 0812XXXXXXXX (Nomor ${service.name})`;
+                inputLabelTitle.textContent = `Masukkan Nomor ${service.name}`;
+                if (bankingLabel) bankingLabel.textContent = `Nomor ${service.name}`;
+                phoneInput.placeholder = `Contoh: 0812XXXXXXXX`;
             }
         }
 
@@ -528,7 +596,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPayable = activeNominalObj.price;
 
         // Reset screen states
-        modalHeaderSection.classList.remove('hide');
+        if (modalHeaderSection) modalHeaderSection.classList.remove('hide');
         modalMainContent.classList.remove('hide');
         verificationScreen.classList.add('hide');
         successScreen.classList.add('hide');
@@ -541,6 +609,20 @@ document.addEventListener('DOMContentLoaded', () => {
         confirmPaymentBtn.classList.remove('hide');
 
         // Populate Modal Fields
+        const receiptType = document.getElementById('receiptType');
+        if (receiptType) {
+            let typeLabel = "GAME";
+            if (service.category === 'banking') {
+                const bankingServices = ['bca', 'brimo', 'bni', 'mandiri', 'seabank'];
+                if (bankingServices.includes(activeServiceId)) {
+                    typeLabel = "M-BANKING";
+                } else {
+                    typeLabel = "E-WALLET";
+                }
+            }
+            receiptType.textContent = typeLabel;
+        }
+
         receiptService.textContent = service.name;
         receiptTarget.textContent = targetAccount;
         receiptNominal.textContent = activeNominalObj.name;
@@ -590,17 +672,17 @@ document.addEventListener('DOMContentLoaded', () => {
         clearInterval(countdownInterval);
         
         // Hide main header and cashier content
-        modalHeaderSection.classList.add('hide');
+        if (modalHeaderSection) modalHeaderSection.classList.add('hide');
         modalMainContent.classList.add('hide');
         
         // Show loading verification screen
         verificationScreen.classList.remove('hide');
         
-        // Simulate verification processing time (3.5 seconds)
+        // Simulate verification processing time (exactly 3 seconds)
         setTimeout(() => {
             verificationScreen.classList.add('hide');
             successScreen.classList.remove('hide');
-        }, 3500);
+        }, 3000);
     });
 
     // Close Modal Box

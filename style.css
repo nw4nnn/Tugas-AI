@@ -768,13 +768,14 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 16px;
+    gap: 12px;
     position: relative;
     overflow: hidden;
     transition: var(--transition-normal);
     justify-content: space-between;
     height: 100%;
-    min-height: 250px;
+    min-height: 190px;
+    box-sizing: border-box;
 }
 
 .service-card::before {
@@ -789,9 +790,9 @@ button {
 }
 
 .service-card:hover {
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px) scale(1.03);
     border-color: var(--neon-cyan);
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.35), 0 0 10px rgba(0, 242, 254, 0.15);
 }
 
 .service-card.active {
@@ -804,62 +805,32 @@ button {
     background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
 }
 
-/* Service Brand Icons Grid styles */
-.service-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: var(--white);
-    flex-shrink: 0;
-    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
-}
-
-/* Game Gradients */
-.ml-logo { background: linear-gradient(135deg, #1e3a8a, #d97706); }
-.ff-logo { background: linear-gradient(135deg, #ea580c, #dc2626); }
-.pubg-logo { background: linear-gradient(135deg, #374151, #eab308); }
-.hok-logo { background: linear-gradient(135deg, #ca8a04, #1d4ed8); }
-.genshin-logo { background: linear-gradient(135deg, #0d9488, #d97706); }
-.val-logo { background: linear-gradient(135deg, #e11d48, #0f172a); }
-.codm-logo { background: linear-gradient(135deg, #16a34a, #1e293b); }
-.roblox-logo { background: linear-gradient(135deg, #4b5563, #000000); }
-
-/* Banking Gradients */
-.dana-logo { background: linear-gradient(135deg, #0070e0, #00c6ff); }
-.ovo-logo { background: linear-gradient(135deg, #4c2a86, #8e44ad); }
-.gopay-logo { background: linear-gradient(135deg, #00aa13, #00e676); }
-.shopeepay-logo { background: linear-gradient(135deg, #ee4d2d, #ff6e2d); }
-.linkaja-logo { background: linear-gradient(135deg, #d32f2f, #ef5350); }
-.seabank-logo { background: linear-gradient(135deg, #00f2fe, #0070f3); }
-.bca-logo { background: linear-gradient(135deg, #0a2540, #1e40af); }
-.bri-logo { background: linear-gradient(135deg, #0070f3, #0099ff); }
-.mandiri-logo { background: linear-gradient(135deg, #fbbf24, #1e293b); }
-.bni-logo { background: linear-gradient(135deg, #f97316, #0d9488); }
-
 .service-info {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
     width: 100%;
+    text-align: center;
 }
 
 .service-info h4 {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     margin-bottom: 0;
     color: var(--white);
+    line-height: 1.3;
+    text-align: center;
 }
 
 .service-info p {
     font-size: 0.75rem;
     color: var(--text-cyber-dim);
     margin-bottom: 0;
+    line-height: 1.4;
+    text-align: center;
 }
 
 .btn-card-buy {
@@ -1649,18 +1620,19 @@ body.modal-open {
 
 .modal-card {
     position: relative;
-    background: rgba(8, 12, 24, 0.85);
+    background: var(--glass-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 242, 254, 0.35);
-    box-shadow: 0 0 35px rgba(0, 242, 254, 0.25), inset 0 0 15px rgba(124, 58, 237, 0.15);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 242, 254, 0.15);
     border-radius: var(--border-radius-md);
     width: 100%;
-    max-width: 580px; /* Lebar sekitar 550-600 px */
-    max-height: 80vh; /* Tinggi maksimal 80% layar */
+    max-width: 680px; /* Lebar sekitar 550-600 px, diubah ke 680px untuk 2 kolom */
+    max-height: 85vh; /* Tinggi maksimal 85% layar */
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    padding: 30px;
     transform: translateY(30px) scale(0.95);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -2155,5 +2127,435 @@ body.modal-open {
     
     .modal-footer {
         flex-direction: column;
+    }
+}
+
+/* =============================================================
+   ANGGOTA KELOMPOK SECTION
+   ============================================================= */
+.group-members-section {
+    padding: 60px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.members-card-wrapper {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    border-radius: var(--border-radius-md);
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.02);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.members-card-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink));
+}
+
+.members-card-header {
+    margin-bottom: 35px;
+}
+
+.members-card-header .header-icon {
+    font-size: 2.5rem;
+    color: var(--neon-cyan);
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+.members-card-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.members-card-header .subtitle {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.member-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-sm);
+    padding: 24px 15px;
+    transition: var(--transition-normal);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.member-item::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--neon-purple);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.member-item:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(124, 58, 237, 0.3);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.15);
+}
+
+.member-item:hover::before {
+    transform: scaleX(1);
+}
+
+.member-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--neon-purple);
+    margin-bottom: 15px;
+    transition: var(--transition-normal);
+}
+
+.member-item:hover .member-icon {
+    background: rgba(0, 242, 254, 0.1);
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+}
+
+.member-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.member-name {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--white);
+}
+
+.member-nim {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    color: var(--neon-cyan);
+    opacity: 0.8;
+}
+
+/* =============================================================
+   ABOUT STATISTICS GRID
+   ============================================================= */
+.about-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.about-stat-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-sm);
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition-normal);
+}
+
+.about-stat-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 242, 254, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 242, 254, 0.1);
+}
+
+.stat-icon-wrapper {
+    font-size: 2rem;
+    color: var(--neon-cyan);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+}
+
+.about-stat-card h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 6px;
+    text-shadow: var(--glow-text-cyan);
+}
+
+.about-stat-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+}
+
+/* =============================================================
+   CARA ORDER NEW (HORIZONTAL)
+   ============================================================= */
+.steps-grid-new {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.step-card-new {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius-sm);
+    padding: 25px 15px;
+    text-align: center;
+    width: 15%;
+    flex-grow: 1;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.step-card-new:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 0, 122, 0.3);
+    box-shadow: 0 10px 25px rgba(255, 0, 122, 0.15);
+}
+
+.step-num-new {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.05);
+    transition: var(--transition-normal);
+}
+
+.step-card-new:hover .step-num-new {
+    color: rgba(255, 0, 122, 0.15);
+}
+
+.step-icon-new {
+    font-size: 2rem;
+    color: var(--neon-pink);
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px var(--neon-pink));
+    transition: var(--transition-normal);
+}
+
+.step-card-new:hover .step-icon-new {
+    color: var(--neon-cyan);
+    filter: drop-shadow(0 0 10px var(--neon-cyan));
+}
+
+.step-card-new h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.4;
+}
+
+.step-arrow-new, .step-arrow-new-row-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--neon-cyan);
+    font-size: 1.3rem;
+    filter: drop-shadow(0 0 8px var(--neon-cyan));
+    flex-shrink: 0;
+    width: 20px;
+}
+
+.step-arrow-new-row-divider::before {
+    content: "\f054";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+/* =============================================================
+   MODAL TWO-COLUMN LAYOUT & SCREEN ADJUSTMENTS
+   ============================================================= */
+@media (min-width: 769px) {
+    .modal-card {
+        overflow: hidden;
+    }
+}
+
+.modal-two-columns {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    height: 100%;
+}
+
+.modal-col-left {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding-right: 25px;
+    text-align: left;
+}
+
+.modal-col-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.modal-brand-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.modal-title-left {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--white);
+    text-shadow: var(--glow-text-cyan);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.qris-image-wrapper {
+    width: 240px;
+    height: 240px;
+    background: var(--white);
+    padding: 8px;
+    border-radius: var(--border-radius-sm);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+    border: 2px solid var(--neon-cyan);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qris-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.qris-instruction-text {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    text-align: center;
+    line-height: 1.4;
+    max-width: 250px;
+}
+
+.modal-action-buttons {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+
+.modal-action-buttons .btn {
+    flex: 1;
+}
+
+@keyframes modalScaleIn {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .steps-grid-new {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .step-card-new {
+        width: 28%;
+        min-height: 180px;
+    }
+    .step-arrow-new, .step-arrow-new-row-divider {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .steps-grid-new {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .step-card-new {
+        width: 100%;
+        min-height: 160px;
+    }
+    .modal-card {
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 20px;
+    }
+    
+    .modal-two-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .modal-col-left {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+    
+    .qris-image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+    }
+    .steps-grid-new {
+        grid-template-columns: 1fr;
     }
 }
